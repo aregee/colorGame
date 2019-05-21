@@ -22,7 +22,8 @@ for (var i = 0; i < squares.length; i++) {
         //grab color of picked color
         var clickedColor = this.style.background;
         //compare color to pickedColor
-        if (clickedColor === pickedColor) {
+        // replace whitesapce
+        if (clickedColor.replace(/\s/g,'') === pickedColor) {
             alert("Correct");
         } else {
             alert("WRONG!!!");
