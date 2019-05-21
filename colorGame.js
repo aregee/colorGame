@@ -14,11 +14,11 @@ colorDisplay.textContent = pickedColor;
 
 
 for (var i = 0; i < squares.length; i++) {
-    // add initial colors to squares
-    squares[i].style.background = colors[i];
-
-    // add click listners to squares
-    squares[i].addEventListener("click", function() {
+// add click listners to squares
+    (function(i){
+        // add initial colors to squares
+        squares[i].style.background = colors[i];
+        squares[i].addEventListener("click", function() {
         //grab color of picked color
         var clickedColor = this.style.background;
         //compare color to pickedColor
@@ -27,7 +27,6 @@ for (var i = 0; i < squares.length; i++) {
         } else {
             alert("WRONG!!!");
         }
-
-
-    });
+      }.bind(squares[i])); 
+    })(i);
 }
