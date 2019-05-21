@@ -6,10 +6,13 @@ var colors = [
     "rgb(0,0,255)",
     "rgb(255,0,255)"
 ];
+var min=0; 
+var max=colors.length - 1;  
+var random = Math.floor(Math.random() * (+max - +min)) + +min;
 var squares = document.querySelectorAll(".square");
-var pickedColor = colors[3];
+var pickedColor = colors[random()];
 var colorDisplay = document.getElementById("colorDisplay");
-
+colorDisplay.style=`color: ${pickedColor}`;
 colorDisplay.textContent = pickedColor;
 
 
